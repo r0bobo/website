@@ -20,14 +20,49 @@ ul.menu li {
     float: left;
 }
 
-ul.menu li a {
+ul.menu a {
     display: block;
     color: white;
     text-align: center;
     padding: 16px;
     text-decoration: none;
+    transition: all 0.2;
 }
 
+/* Animated button
+ul.menu span {
+    display: inline-block
+}
+
+ul.menu span:after {
+    content: ">";
+    position: absolute;
+    opacity: 0;
+    top: 0;
+    right: -20px;
+    transition: 0.15s;
+}
+
+ul.menu a:hover span {
+    padding-right: 25px;
+}
+
+ul.menu a:hover span:after {
+    opacity: 1;
+    right: 0;
+}
+
+ul.menu a:active span {
+    padding-right: 25px;
+}
+
+ul.menu a:active span:after {
+    opacity: 1;
+    right: 0;
+}
+*/
+
+/* Red button highlight */
 ul.menu a:hover:not(.active) {
     background-color: #d92626;
 }
