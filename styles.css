@@ -29,6 +29,14 @@ ul.menu a {
     transition: all 0.2;
 }
 
+ul.dl_log {
+    list-style-type: none;
+}
+
+ul.dl_log ul {
+    list-style-type: none;    
+}
+
 /* Animated button
 ul.menu span {
     display: inline-block
