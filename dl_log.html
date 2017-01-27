@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Test Page</title>
+    <title>Youtube Sync Log</title>
     <link rel="stylesheet" href="styles.css">
     <script src="jquery-3.1.1.min.js"></script>
 </head>
@@ -19,9 +19,12 @@
         var txt = []
 
         $.getJSON('/python_logs/youtube_dl.json', function(response) {
+            response = response.reverse();
             for (var i in response) {
-                txt += "<li>" + response[i].date + ": " + "Downloaded " + response[i].nr_downloaded + " videos. <ul>";
-                console.log(response[i]);
+                var dl_speed = response[i].dl_speed/1024**2
+                txt += "<li><span class=\"dl_log_sub\">" + response[i].date + ": </span>" +
+                       "<span class=\"dl_log_main\">Downloaded " + response[i].nr_downloaded + " videos. </span>" +
+                       "<span class=\"dl_log_sub\">(Average speed " + dl_speed.toFixed(1) + " Mb/s )</span><ul>";
                 for (var j in response[i].videos) {
                     txt += "<li>" + response[i].videos[j] + "<\/li>";
                 }
